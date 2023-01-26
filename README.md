@@ -56,22 +56,49 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
+1.Create module encoder and decoder.
+
+2.Get inputs and outputs for encoders and decoders.
+
+3.Perform or operation for encoder and and logic for decoders.
+
+4.Perform RTL LOGIC and get waveform.
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:P.Jeba Princy 
+RegisterNumber:2200375
 */
+ENCODER
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input d0,d1,d2,d3,d4,d5,d6,d7; 
+output a,b,c; 
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
-
-
-
+DECODER
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c); 
+input a,b,c;
+outputd 0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c); 
+assign d1 = (~a&~b&c); 
+assign d2 =(~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c); 
+endmodule
 
 
 ### RTL LOGIC  
+![image](https://user-images.githubusercontent.com/122682918/214765448-d7d348f6-295e-43df-8987-666c7710999a.png)
+![image](https://user-images.githubusercontent.com/122682918/214765488-f3439335-2ee1-459d-84ff-3ab7f8847133.png)
 
 
 
@@ -80,13 +107,18 @@ RegisterNumber:
 
 
 
-### TIMING DIGRAMS  
+### TIMING DIGRAMS
+![image](https://user-images.githubusercontent.com/122682918/214765563-81a2c96f-2c40-4f68-b051-c77373aa1a9e.png)
+![image](https://user-images.githubusercontent.com/122682918/214765592-ab278e70-5980-49a8-b261-bcb55c31f771.png)
+
 
 
 
 
 
 ### TRUTH TABLE 
+![image](https://user-images.githubusercontent.com/122682918/214765653-1e506cdb-7b99-4a34-98d3-c2e5b7b0783c.png)
+![image](https://user-images.githubusercontent.com/122682918/214765731-ffd2ecbd-998a-4a7c-94a2-8542a8f724c8.png)
 
 
 
@@ -94,3 +126,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+Thus the program to design encoder and decoder is done.
